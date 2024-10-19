@@ -1,3 +1,6 @@
+//Heatmap Chart component - takes as inputs data 
+//from App.js and options from json (chartConfig.json)
+
 import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 
