@@ -5,12 +5,12 @@ const routes = [
     {
         path: '/',
         exact: true,
-        component: Homepage,
+        component: <Homepage/>,
         label: 'Homepage'
     },
     {
         path: '/dashboard',
-        component: Dashboard,
+        component: <Dashboard/>,
         label: 'Dashboard'
     }
 ];

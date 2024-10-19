@@ -10,7 +10,7 @@ const initialState = {
     initialState,
     reducers: {
       addPaths: (state, action) => {
-        console.log(action.payload)
+        // console.log(action.payload)
         state.paths.push(action.payload);
         
       },

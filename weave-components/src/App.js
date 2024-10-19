@@ -23,13 +23,6 @@ export default function App() {
       Math.floor(Math.random() * 10000)
     ]);
   }
-
-//   const breadcrumbPaths = [
-//     { label: 'Homepage', link: '/' },
-//     { label: 'Dashboard', link: '/dashboard' }
-//   ];
-//    const breadcrumbPaths = useSelector((state) => state.path.paths);
-// console.log(breadcrumbPaths);
   return (
     <div className="App">
    
@@ -38,7 +31,7 @@ export default function App() {
       {/* <Chart options={options} data={data}/> */}
       <Routes>
       {routes.map((route, index) => (
-        <Route key={route.path} {...route}/>
+        <Route key={index} path={route.path} element={route.component}/>
       ))}
       </Routes>
     </Router>
