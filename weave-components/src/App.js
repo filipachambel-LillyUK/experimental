@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import routes from './routes';
+import Alerts from './Alert/Alerts';
 
 export default function App() {
   const year = 2016;
@@ -28,6 +29,7 @@ export default function App() {
    
     <Router>
          <Breadcrumbs paths={routes}/>
+         <Alerts type="success" title="Hello" content="Text Text Text Text Text Text Text Text Text Text Text "/>
       {/* <Chart options={options} data={data}/> */}
       <Routes>
       {routes.map((route, index) => (
