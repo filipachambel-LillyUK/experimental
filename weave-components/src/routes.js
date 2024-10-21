@@ -10,6 +10,7 @@ const routes = [
     },
     {
         path: '/dashboard',
+        exact: true,
         component: <Dashboard/>,
         label: 'Dashboard'
     }

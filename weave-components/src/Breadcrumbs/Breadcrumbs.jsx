@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import routes from '../routes';
+import PropTypes from 'prop-types';
 
 const Breadcrumbs = ({paths}) => {
   return (
@@ -38,4 +37,15 @@ const Breadcrumbs = ({paths}) => {
   );
 };
 
+Breadcrumbs.propTypes = {
+    paths: PropTypes.arrayOf(
+      PropTypes.shape({
+        path: PropTypes.string.isRequired,
+        exact: PropTypes.bool,
+        component: PropTypes.element.isRequired,
+        label: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  };
+  
 export default Breadcrumbs;
