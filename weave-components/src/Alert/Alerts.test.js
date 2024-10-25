@@ -22,7 +22,7 @@ describe("Alerts component", () => {
     expect(alertElement).toHaveClass("rounded-b");
     expect(iconElement).toHaveClass("text-blue-500");
     expect(closeElement).toHaveClass(
-      "bg-blue-50 text-blue-500 focus:ring-blue-400 p-1.5 hover:bg-blue-200 dark:text-blue-400"
+      "bg-blue-50 text-blue-500 focus:ring-blue-400 hover:bg-blue-200 dark:text-blue-400"
     );
 
     //position center by default
@@ -57,7 +57,7 @@ describe("Alerts component", () => {
     expect(alertElement).toHaveClass("rounded-b");
     expect(iconElement).toHaveClass("text-teal-500");
     expect(closeElement).toHaveClass(
-      "bg-teal-50 text-teal-500 focus:ring-teal-400 p-1.5 hover:bg-teal-200 dark:text-teal-400"
+      "bg-teal-50 text-teal-500 focus:ring-teal-400 hover:bg-teal-200 dark:text-teal-400"
     );
   });
 
@@ -73,7 +73,7 @@ describe("Alerts component", () => {
     expect(alertElement).toHaveClass("rounded-b");
     expect(iconElement).toHaveClass("text-orange-500");
     expect(closeElement).toHaveClass(
-      "bg-orange-50 text-orange-500 focus:ring-orange-400 p-1.5 hover:bg-orange-200 dark:text-orange-400"
+      "bg-orange-50 text-orange-500 focus:ring-orange-400 hover:bg-orange-200 dark:text-orange-400"
     );
   });
 
@@ -89,7 +89,7 @@ describe("Alerts component", () => {
     expect(alertElement).toHaveClass("rounded-b");
     expect(iconElement).toHaveClass("text-red-500");
     expect(closeElement).toHaveClass(
-      "bg-red-50 text-red-500 focus:ring-red-400 p-1.5 hover:bg-red-200 dark:text-red-400"
+      "bg-red-50 text-red-500 focus:ring-red-400 hover:bg-red-200 dark:text-red-400"
     );
   });
 
