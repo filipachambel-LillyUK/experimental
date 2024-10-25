@@ -110,7 +110,7 @@ export default function Alerts({
       icon: "text-red-500",
       borderRadius: "rounded-b",
       closeIcon:
-        "bg-red-50 text-red-500 focus:ringred-400 p-1.5 hover:bg-red-200 dark:text-red-400",
+        "bg-red-50 text-red-500 focus:ring-red-400 p-1.5 hover:bg-red-200 dark:text-red-400",
     },
   };
 
@@ -139,21 +139,22 @@ export default function Alerts({
 
   return (
     <div
-      className={`${alertStyle.background} ${alertStyle.border} ${alertStyle.borderRadius} ${alertStyle.text} px-4 py-3 shadow-md`}
+      className={`${alertStyle.background} ${alertStyle.border} ${alertStyle.borderRadius} ${alertStyle.text} px-4 py-3 shadow-md w-auto m-4`}
       role="alert"
       style={alertPosition}
+      data-testid="alert-component"
     >
       <div className="flex-col">
         <div className="flex py-1 justify-evenly">
           <svg
-            className={`fill-current h-6 w-6 ${alertStyle.icon} mr-4`}
+            className={`fill-current h-7 w-7 ${alertStyle.icon} mr-4`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
           >
             <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
           </svg>
 
-          <div className="mr-3">
+          <div className="mx-3">
             <p className="font-bold">{alertContent.header}</p>
             <p className="text-sm">{alertContent.body}</p>
           </div>

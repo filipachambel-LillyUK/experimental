@@ -10,6 +10,8 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import routes from './routes';
 import Alerts from './Alert/Alerts';
+import { Provider } from 'react-redux';
+import { store } from './redux/store.jsx';
 
 export default function App() {
   const year = 2016;
@@ -25,11 +27,12 @@ export default function App() {
     ]);
   }
   return (
-    <div className="App">
+    <Provider store={store}>
+    <div className="App" data-testid='app-component'>
    
     <Router>
          <Breadcrumbs paths={routes}/>
-         <Alerts type="success" title="Hello" content="Text Text Text Text Text Text Text Text Text Text Text "/>
+         <Alerts title="New title" content="New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content" position="topRight" type="warning"/>
       {/* <Chart options={options} data={data}/> */}
       <Routes>
       {routes.map((route, index) => (
@@ -38,6 +41,7 @@ export default function App() {
       </Routes>
     </Router>
     </div>
+    </Provider>
   );
 }
 
