@@ -3,7 +3,8 @@
     "title": {
       "top": 30,
       "left": "center",
-      "text": "Daily Step Count"
+      "text": "Daily Step Count",
+      "show": true
     },
     "tooltip": {},
     "visualMap": {
@@ -15,15 +16,15 @@
       "top": 65
     },
     "calendar": {
-      "top": 120,
+      "top": 150,
       "left": 30,
       "right": 30,
       "cellSize": ["auto", 13],
-      "range": "2016",
+      "range": ["2017-01-02", "2024-10-29"],
       "itemStyle": {
         "borderWidth": 0.5
       },
-      "yearLabel": { "show": false }
+      "yearLabel": { "show": true }
     }
   }
 }
