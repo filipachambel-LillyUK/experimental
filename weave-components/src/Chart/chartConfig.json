@@ -3,13 +3,13 @@
     "title": {
       "top": 30,
       "left": "center",
-      "text": "Daily Step Count",
+      "text": "Bots created",
       "show": true
     },
     "tooltip": {},
     "visualMap": {
       "min": 0,
-      "max": 10000,
+      "max": 5,
       "type": "piecewise",
       "orient": "horizontal",
       "left": "center",
@@ -20,7 +20,7 @@
       "left": 30,
       "right": 30,
       "cellSize": ["auto", 13],
-      "range": ["2019-01-02", "2020-10-29"],
+      "range": ["2019-09-02", "2020-09-29"],
       "itemStyle": {
         "borderWidth": 0.5
       },

@@ -44,17 +44,21 @@ const mockData = [
 describe('Chart Component', () => {
   beforeEach(()=> {
     jest.spyOn(echarts, 'init').mockImplementation(() => {
-        return {
+        return{
             setOption: jest.fn(),
             resize: jest.fn(),
             dispose: jest.fn(),
             getDom: jest.fn().mockReturnValue({ getContext: jest.fn() })
         };
+        // return chartInstanceMock;
     });
   });
 
   afterEach(() => {
-    // cleanup();
+//    if(chartInstanceMock && typeof chartInstanceMock.dispose === 'function'){
+//     chartInstanceMock.dispose();
+//    }
+    cleanup();
     jest.clearAllMocks();
   });
 
@@ -78,7 +82,21 @@ describe('Chart Component', () => {
     consoleSpy.mockRestore();
   });
 
-  it('validates date range correctly', () => {
+  it('validates tooltip should be empty', () => {
+    const invalidOptions = {
+        ...mockOptions,
+        tooltip: {
+            ...mockOptions.tooltip,
+            show: true
+        }
+    };
+    const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    render(<Chart options={invalidOptions} data={mockData}/>);
+    expect(consoleSpy).toHaveBeenCalledWith('Validation logic: ', 'Tooltip should be an empty object.');
+    consoleSpy.mockRestore();
+});
+
+it('validates date range correctly', () => {
     const invalidOptions = {
         ...mockOptions,
         calendar: {
