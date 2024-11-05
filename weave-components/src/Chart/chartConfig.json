@@ -20,7 +20,7 @@
       "left": 30,
       "right": 30,
       "cellSize": ["auto", 13],
-      "range": ["2017-01-02", "2024-10-29"],
+      "range": ["2019-01-02", "2020-10-29"],
       "itemStyle": {
         "borderWidth": 0.5
       },

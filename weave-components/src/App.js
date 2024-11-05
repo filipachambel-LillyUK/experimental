@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Chart from './Chart';
-import json from './chartConfig.json';
+import Chart from './Chart/Chart.jsx';
+import json from './Chart/chartConfig.json';
 import * as echarts from "echarts";
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import Homepage from './pages/Homepage';
@@ -13,34 +13,28 @@ import Alerts from './Alert/Alerts';
 import { Provider } from 'react-redux';
 import { store } from './redux/store.jsx';
 import { useEffect, useState } from 'react';
+import sampleData from './Chart/sample_bot_data_10.json';
 
 export default function App() {
   const [data, setData] = useState([]);
-  const year = json.year;
-  const endYearOffset = 3;
-  const date = +echarts.time.parse(year + '-01-01');
-  const end = +echarts.time.parse(+year + endYearOffset + '-01-01');
-  const dayTime = 3600 * 24 * 1000;
-
-  const options = json.option;
-
-  // for (let time = date; time < end; time += dayTime) {
-  //   data.push([
-  //     echarts.time.format(time, '{yyyy}-{MM}-{dd}', false),
-  //     Math.floor(Math.random() * 10000)
-  //   ]);
-  // }
+  let options = json.option;
+  // const [options, setOptions] = useState(null);
 
   useEffect(() => {
-    const generatedData = [];
-    for (let time = date; time < end; time += dayTime) {
-      generatedData.push([
-        echarts.time.format(time, "{yyyy}-{MM}-{dd}", false),
-        Math.floor(Math.random() * 10000),
-      ]);
-    }
-    setData(generatedData);
-  }, [date, end, dayTime]);
+    // Format the sample data for heatmap
+    const formattedData = sampleData.map(item => [
+      item.created_date, 
+      item.id            
+    ]);
+    setData(formattedData);
+  }, []);
+
+  // useEffect(() => {
+   
+  //   if (json && json.option) {
+  //     setOptions(json.option);
+  //   }
+  // }, [json]);
 
   return (
     <Provider store={store}>
@@ -49,7 +43,9 @@ export default function App() {
     <Router>
          {/* <Breadcrumbs paths={routes}/> */}
          {/* <Alerts title="New title" content="New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content" position="topRight" type="warning"/> */}
-      <Chart options={options}/>
+        
+            <Chart options={options} data={data}/>
+       
       <Routes>
       {routes.map((route, index) => (
         <Route key={index} path={route.path} element={route.component}/>
