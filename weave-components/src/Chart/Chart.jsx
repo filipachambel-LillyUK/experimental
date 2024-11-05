@@ -95,6 +95,7 @@ export default function Chart({ options, data }) {
       const end = +echarts.time.parse(endDate);
 
       if (isNaN(start) || isNaN(end)) {
+        console.error('Validation logic: ', 'Invalid date format. Please use YYYY-MM-DD format.');
         throw new Error("Invalid date format. Please use YYYY-MM-DD format.");
       }
 
@@ -115,6 +116,7 @@ export default function Chart({ options, data }) {
 
   useEffect(() => {
     if (!options) {
+      console.error('Validation logic: ', 'No options')
       setError("No options");
       return;
     }
