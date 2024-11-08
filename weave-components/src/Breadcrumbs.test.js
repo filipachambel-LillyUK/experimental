@@ -1,8 +1,8 @@
 import { render, screen, waitFor, act } from "@testing-library/react";
-import Breadcrumbs from "./Breadcrumbs";
+import Breadcrumbs from "./Breadcrumbs/Breadcrumbs";
 import { MemoryRouter, Route, Routes} from "react-router-dom";
-import routes from "../routes";
-import Homepage from "../pages/Homepage";
+import routes from "./routes";
+import Homepage from "./pages/Homepage";
 
 describe('Breadcrumbs component', ()=> {
     const setup = (initialRoute, paths) => {

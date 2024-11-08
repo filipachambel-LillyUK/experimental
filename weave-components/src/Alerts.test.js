@@ -1,5 +1,5 @@
 import { render, screen, waitFor, act } from "@testing-library/react";
-import Alerts from "./Alerts";
+import Alerts from "./Alert/Alerts";
 
 describe("Alerts component", () => {
   //renders with and without props

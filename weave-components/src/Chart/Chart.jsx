@@ -93,7 +93,6 @@ export default function Chart({ options, data }) {
 
       if (isNaN(start) || isNaN(end)) {
         console.error('Validation logic: ', 'Invalid date format. Please use YYYY-MM-DD format.');
-        //throw new Error("Invalid date format. Please use YYYY-MM-DD format.");
       }
 
       const startYear = new Date(startDate).getFullYear();

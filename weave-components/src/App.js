@@ -48,7 +48,7 @@ export default function App() {
    
     <Router>
          {/* <Breadcrumbs paths={routes}/> */}
-         {/* <Alerts title="New title" content="New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content" position="topRight" type="warning"/> */}
+         {/* <Alerts title="New title" content="New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content New content" position="topRight" type="error" /> */}
         
           <Chart options={options} data={data}/>
        
